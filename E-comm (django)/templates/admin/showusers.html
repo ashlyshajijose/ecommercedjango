@@ -1,0 +1,47 @@
+{% extends "admin.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/showusers.css' %}">
+    <title>All Users</title>
+</head>
+<body>
+<center>
+    <h2>All users</h2>
+    <table style="width: 1300px; background-color: aliceblue;">
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Phone Number</th>
+            <th>E mail</th>
+            <th>Address</th>
+            <th>Photo</th>
+            <th>Action</th>
+        </tr>
+        {% for u in user %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.First_name }}.{{ u.Last_name }}</td>
+            <td>{{ u.Phone_numbr }}</td>
+            <td>{{ u.E_mail }}</td>
+            <td>{{ u.Address }}</td>
+            <td>
+                {% if u.photo %}
+                <img src="{{ u.photo.url }}" height="100px" width="100px"></td>
+                {% else %}
+                <img src="{% static 'img/user.png' %}" height="100px" width="100px">
+                {% endif %}
+            <td><a href="{% url 'deletecust' u.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</center>
+</body>
+</html>
+{% endblock %}

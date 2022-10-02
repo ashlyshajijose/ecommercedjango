@@ -1,0 +1,46 @@
+{% extends 'home.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <title>Cart</title>
+</head>
+<body>
+<div class="container-fluid">
+<center>
+    {% if cart1.cart.product is null %}
+    <h2>Oops ...</h2><br>
+        <label>You have no items in the cart. Add items by searching from home or category. Enjoy shopping!</label>
+    {% else %}
+    <fieldset>
+        <div class="card-group " style="width: 450px;">
+        <div class="card border-0" >
+            <label><b>{{cart1.cart.product.Product_name}}</b></label><br>
+            <label>{{cart1.cart.product.Product_detail}}</label>
+            <label class="btnb"><caption>Rs.</caption>{{cart1.cart.product.Product_price}}/- </label>
+        <a href="">Check out</a>
+        <a href="">Delete</a>
+        </div>
+        <div class="card border-0">
+            <img src="{{cart1.cart.product.Product_img.url}}" alt="product image" height="100px" width="100px"><br>
+            <label>Qty:</label>
+            <input type="number" value="1" class="small">
+        </div>
+        </div>
+    </fieldset> 
+{% endif %}
+</div>
+{% endblock %}
+</center>
+</body>
+</html>

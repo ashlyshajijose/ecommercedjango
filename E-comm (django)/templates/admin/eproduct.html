@@ -1,0 +1,39 @@
+{% extends "admin.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aproduct.css' %}">
+    <title>Edit product</title>
+</head>
+<body>
+<center>
+    <h2>Add Products</h2>
+<form method="post" action="/e_product/{{prod.id}}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Product name:</label>
+    <input type="text" name="nprname" value="{{prod.Product_name}}" style="margin-left: 5px;">
+    <label>Product Description:</label>
+    <input type="text" name="nprdesc" value="{{prod.Product_detail}}" style="margin-left: 30px;"><br><br>
+    <label>Product Price:</label>
+    <input type="number" name="nprprice" value="{{prod.Product_price}}" style="margin-left: 10px;">
+    <label>Product Stock:</label>
+    <input type="number" name="nprstock" value="{{prod.Product_stock}}" style="margin-left: 72px;"><br><br>
+    <select name="nadcatg" >
+        <option value=""hidden>Category</option>
+        {% for e in ecatg %}
+        <option value="{{e.id}}">{{e.product_category}}</option>
+        {% endfor %}
+    </select>
+    <label>Product Image:</label>
+    <input type="file" name="nprimg" accept="P_img/*" value="{{prod.Product_img}}" style="margin-left: 10px;"><br><br>
+    <button type="submit">Submit</button>
+</form>
+</center>
+</body>
+</html>
+{% endblock %}

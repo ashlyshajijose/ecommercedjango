@@ -1,0 +1,26 @@
+body{
+    background-image: url('https://image.shutterstock.com/image-photo/old-brick-black-color-wall-260nw-1605128917.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    margin-left: -1%;
+    margin-right: -1%;
+    padding: 8px 0;
+}
+.bttm{
+    padding-top: .55%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: rgb(47, 137, 168);
+}
+.nav-item{
+    padding-right: 5%;
+}

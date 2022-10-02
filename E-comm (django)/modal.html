@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>E-Commerse</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+        <style>
+            body{
+                background-size: 100%;
+                background-color: rgb(176, 234, 176);
+            }
+            #header{
+        position: fixed;
+        top: 0;
+        padding-bottom:1vw;
+        left: 0;
+        width: 100%;
+        background-color: rgb(158, 162, 230);
+        font-size: 1vw;
+            }
+            #header .active{
+                background-color: rgb(255, 255, 255);
+                color: black;
+            }
+            #style{
+                padding-bottom: 0.1vw;
+            }
+            .btn{
+                padding: 4px 2px;
+                padding-bottom: 4px;
+                margin-top: 0.7vw;
+            }
+            .btn:hover{
+                border-color: white;
+            }
+            .nav-pills{
+                border-style: hidden;
+            }
+            .carousel-inner{
+                position: relative;
+                max-width: 999;
+                left: -1%;
+                width: 102%;
+            }
+            .dropdown-item:hover{
+                background-color:rgba(77, 130, 229, 0.529);
+            }
+            #gap{
+                padding-left: 1vw;
+                margin-top: 0.5vw;
+            }
+            input{
+                width: 150%;
+                border-style: hidden;
+                height: 90%;
+            }
+            #img{
+                background-image: url("https://cdn-icons-png.flaticon.com/512/639/639375.png");
+                background-repeat: no-repeat;
+                background-size: 7%;
+                background-position: right;
+                border-radius: 3px;
+
+            }
+            .dropdown-menu{
+                background-color: rgb(219, 230, 242);
+            }
+            .dropdown-toggle{
+                margin-left: 1vw;
+            }
+            .nav-item{
+                margin-top: 0.4vw;
+            }
+            button{
+                border-style: hidden;
+                border-top-style: solid ;
+                border-top-color: white;
+                border-top-width:.3vw ;
+                background-color: white;
+            }
+            
+            .modal input{
+                border-bottom: solid;
+                width: 20vw;
+            }
+            #check{
+                width: 1vw;
+                height: 1vw;
+            }
+            .center{
+                text-align: center;
+                padding-top:3vw;
+            }
+            .row{
+                background-attachment: fixed;
+                margin-top: 4vw;
+                border: 100% 5%;
+                margin-left: -1%;
+                border-bottom: 1px solid;
+                padding-left: 2vw;
+                background-color: rgb(246, 212, 103);
+                padding-top: 0.8vw;
+                padding-bottom: 0.8vw;
+            }
+            #over:hover{
+                border: 1px solid;
+                padding:3px;
+                border-color: white ;
+                border-radius: 3px;
+            }
+            #over{
+                margin-left: 3px;
+                padding:5px 4px 4px;
+                width:3vw;
+                height:3vw;
+                margin-top: 10px;
+                background-size: 100%;
+                background-image: url(https://cdn.pixabay.com/photo/2015/10/22/16/42/icon-1001596_960_720.png);
+                background-repeat: no-repeat;
+            }
+            .modal-tilte{
+                margin-top: 3px;
+            }
+            a:hover{
+                text-decoration: none;
+                color: black;
+            }
+            #foot{
+                margin-left: -1%;
+                margin-right: -1%;
+                background-color: burlywood;  
+            }
+            #foot a:hover{
+                text-decoration: underline;
+            }
+            a{
+                color: black;
+            }
+            a:hover{
+                color: blue;
+            }
+            .card-deck{
+                padding-top: 10px;
+            }
+            #overlay{
+                opacity: 0;
+            }
+            #overlay:hover{
+                opacity: 1;
+                background-color: rgba(245, 245, 220, 0.229);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col"><a href=""><img src="https://cdn-icons-png.flaticon.com/512/2731/2731866.png" width="60vw" height="60vw" ><br>Offers</a></div>
+                <div class="col"><a href=""><img src="https://www.getsetclean.in/images/b1axej4ajyjt/1n0i7KxLwPGf653vbRwkYH/084a9ec06b85ee42413c94d46a32c42c/c2h1dHRlcnN0b2NrXzE1Nzc1MjIzNDcuanBn/990w-660h/shutterstock-1577522347.jpg" width="60vw" height="60vw"><br>Groceries</div></a>
+                <div class="col"><a href=""><img src="https://cdn1.smartprix.com/rx-iIa55V4wF-w1200-h1200/Ia55V4wF.jpg" width="60vw" height="60vw"><br>Mobiles</div></a>
+                <div class="col"><a href=""><img src="https://media.istockphoto.com/photos/mobile-devices-picture-id178716575?k=20&m=178716575&s=612x612&w=0&h=Cpbs-ivT4RGz--xBlXFrHhTTPX5kaEcRd4FK4koduWM=" width="60vw" height="60vw"><br>Electronics</div></a>
+                <div class="col"><a href=""><img src="https://image.shutterstock.com/image-photo/full-length-stylish-multicultural-women-260nw-1855048690.jpg" width="60vw" height="60vw"><br>Fashion</div></a>
+                <div class="col"><a href=""><img src="https://media.istockphoto.com/photos/set-of-home-kitchen-appliances-in-the-room-on-the-wall-background-picture-id1196974664?k=20&m=1196974664&s=612x612&w=0&h=9PNuGOYbsj7J2DTPA8J6kTJUoRHKHLAyUmhRgCdYXVE=" width="60vw" height="60vw"><br>Appliences</div></a>
+                <div class="col"><a href=""><img src="https://media.istockphoto.com/photos/eclectic-living-room-interior-with-comfortable-velvet-corner-sofa-picture-id1190440285?k=20&m=1190440285&s=612x612&w=0&h=8e8k0hwB200m1hztqq2ddEQTK9ftGcnLWCbktefeSRI=" width="60vw" height="60vw"><br>Home</div></a>
+                <div class="col"><a href=""><img src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100" width="60vw" height="60vw"><br>  More</div></a>
+            </div>
+            <div id="header">
+                <ul class="nav nav-pills navbar-expand-sm justify-content-center">
+                <li class="nav-item"><a href="http://127.0.0.1:5500/Home.html" id="head" class="nav-link active" style="font-size: 15px;" >Home</a></li>
+                <li class="nav-item" id="gap"><input type="text" id="img" placeholder="Search by Name / Brand"></li>
+                <li class="nav-item"><a href="" id="head" class="nav-link dropdown-toggle" data-toggle="dropdown" style="margin-left: 10vw; font-size: 15px;">Category</a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="http://127.0.0.1:5500/Men's%20wear.html" >Men</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5500/Women's%20wears.html">Women</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:5500/Kids%20wear.html">Kids</a>
+                    </div>
+                </li>
+                <li class="nav-item" id="over"><a href="http://127.0.0.1:5500/cart.html"><img  width="40vw" height="45vw" ></a></li>
+                <button type="button" class="btn" data-toggle="modal" data-target="#pop" style="margin-left:1vw">Log in</button>
+            </ul>
+            </div>
+            <div class="modal" id="pop">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title"> Log in </h2>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <label for="uname">User Name:</label>
+                                <input type="text" id="uname" style="margin-left: 20px;"><br><br>
+                                <label for="pwd"> Password:</label>
+                                <input type="password" id="pwd" style="margin-left: 30px;">
+                                <div class="center">
+                                    <input type="checkbox" id="check">
+                                    <label for="check">Remember me</label><br><br>
+                                </div>
+                                <button type="submit" class="btb btn-primary" style="padding-bottom: 6px; border-radius:3px; margin-left: 13vw; font-size:1.2vw">Log in</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <label for="new">Don't have an account?</label>
+                            <a href="" id="style" data-toggle="modal" data-target="#sign"> Create one here</a>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>
+                    </div>
+                </div>
+        </div>
+        <div class="modal" id="sign">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Sign up </h2>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <lable for="fname">Full Name:</lable>
+                            <input type="text" id="fname" style="margin-left: 65px;"><br><br>
+                            <label for="lname">Last Name:</label>
+                            <input type="text" id="lname" style="margin-left: 60px;"><br><br>
+                            <label for="pwd">Password:</label>
+                            <input type="text" id="pwd" style="margin-left: 70px;"><br><br>
+                            <label for="Cpwd">Confirm Password:</label>
+                            <input type="password" id="Cpwd" style="margin-left: 10px;">
+                            <button type="submit" class="btb btn-primary" style="margin-top: 1vw;padding-bottom: 6px; border-radius:3px; margin-left: 13vw; font-size:1.2vw">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <label >Already have an account?</label>
+                        <a href="" id="style" data-dismiss="modal"> Logn in here</a>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                
+        <div id="slid" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#slid" data-slide-to="0" class="active"></li>
+                <li data-target="#slid" data-slide-to="1"></li>
+                <li data-target="#slid" data-slide-to="2"></li>
+                <li data-target="#slid" data-slide-to="3"></li>
+                <li data-target="#slid" data-slide-to="4"></li>
+            </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item ">
+                <img src="https://www.fabindia.com/file/general/hp-mb-27sep21-5.jpg" width="1600vw" height="480vw" class="img-fluid">
+            </div>
+            <div class="carousel-item">
+                <img src="https://imgs.search.brave.com/099BkWJdTHvJgfeaAI7cK2HzjKPW4B7RWAkeqLqtJvs/rs:fit:1080:520:1/g:ce/aHR0cHM6Ly93d3cu/YW5kcm9pZGhlYWRs/aW5lcy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMTAv/T25lUGx1cy1Ob3Jk/LXNwZWNpYWwtZWRp/dGlvbi1sZWFrLmpw/ZWc" width="1600vw" height="480vw"class="img-fluid">
+            </div>
+            <div class="carousel-item ">
+                <img src="https://n1.sdlcdn.com/imgs/k/f/v/12_april_WB_Festive_kurta_sets_WEB_1-9d9b7.jpg" width="1600vw" height="480vw" class="img-fluid">
+            </div>
+            <div class="carousel-item">
+                <img src="https://storage-asset.msi.com/us/picture/banner/banner_1649440035354f899eaea7b476b5ee40e96b7034f9.jpeg" width="1600vw" height="480vw" class="img-fluid">
+            </div>
+            <div class="carousel-item active">
+                <img src="https://n3.sdlcdn.com/imgs/k/f/v/12_april_WB_Breezy_Dresses_WEB-5febf.jpg" width="1600vw" height="480vw" class="img-fluid">
+            </div>
+        </div>
+            <a class="carousel-control-prev" href="#slid" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+            <a class="carousel-control-next" href="#slid" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+        </div>          
+        <h3 style="text-align: center; background-color:azure; margin-top:8px; padding: 5px 0px">Featured</h3>
+        <div class="banner">
+        <img src="https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/MAX-Banner2-desktop-Men-28JULY2022.png" width="100%">
+        </div>
+        <div class="card card-deck">
+            <div class="card" >
+            <img src="https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/h/1/t/l-t312-cgblwh-new-eyebogler-original-imafzs5hrjgzsfpr-bb.jpeg?q=70"  width="280vw" height="300vw">
+            <div class="card-img-overlay" id="overlay" >
+                <h4> more details</h4>
+            </div>
+            </div>
+            <div class="card-body" style="width:100%">
+                <a href=''>Color Block Men Round<br> Neck Grey T-Shirt<br>₹299<br></a>
+                <button type="button" class="btn btn-warning"><img src="https://img.icons8.com/material/344/shopping-cart-loaded--v1.png" width="20vw" height="20vw">&nbsp;ADD TO CART</button>
+            </div>
+            <div class="card-body text-center" >
+                <a href=''><img src="https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg" width="280vw" height="300vw"><br>
+                Veirdo - Multicolor Cotton<br> Regular Fit Men's T-Shirt<br>₹319<br></a>
+                <button type="button" class="btn btn-warning"><img src="https://img.icons8.com/material/344/shopping-cart-loaded--v1.png" width="20vw" height="20vw">&nbsp;ADD TO CART</button>
+            </div>
+            <div class="card-body text-center" >
+               <a href=''><img src="https://n1.sdlcdn.com/imgs/k/j/f/Gritstones-100-Percent-Cotton-Regular-SDL655535391-1-2e42a.jpg"  width="280vw" height="300vw"><br>
+                Cotton Regular Fit Full Sleeves <br>Button Down Collar Grey Shirt <br>₹379<br></a>
+                <button type="button" class="btn btn-warning"><img src="https://img.icons8.com/material/344/shopping-cart-loaded--v1.png" width="20vw" height="20vw">&nbsp;ADD TO CART</button>
+            </div>
+            <div class="card-body text-center" >
+                <a href=''><img src="https://assets.ajio.com/medias/sys_master/root/h47/h42/13479592722462/-473Wx593H-460362204-maroon-MODEL.jpg"  width="280vw" height="300vw"><br>
+                Checked Slim Fit Shirt <br>with Patch Pocket<br>₹999<br></a>
+                <button type="button" class="btn btn-warning"><img src="https://img.icons8.com/material/344/shopping-cart-loaded--v1.png" width="20vw" height="20vw">&nbsp;ADD TO CART</button>
+            </div>
+        </div>
+            <div class="banner">
+                <img src="https://medias.utsavfashion.com/media/wysiwyg/home/2022/2807/bestseller-shopstopper.jpg" width="100%">
+            </div>
+        <div class="card card-deck">
+            <div class="card-body text-center" >
+               <a href=''> <img src="https://medias.utsavfashion.com/media/catalog/product/cache/1/small_image/295x/040ec09b1e35df139433887a97daa66f/e/m/embroidered-net-pakistani-suit-in-teal-blue-v1-kch5141.jpg"  width="280vw" height="330vw"><br>
+                Embroidered Net <br>Suit in Teal Blue<br>₹3,699<br></a>
+                <button type="button" class="btn btn-warning"><img src="https://img.icons8.com/material/344/shopping-cart-loaded--v1.png" width="20vw" height="20vw">&nbsp;ADD TO CART</button>
+            </div>
+            <div class="card-body text-center" >
+                <a href=''><img src="https://medias.utsavfashion.com/media/catalog/product/cache/1/image/500x/040ec09b1e35df139433887a97daa66f/k/c/kch849_2.jpg"  width="280vw" height="330vw"><br>
+                Embroidered Georgette <br>Suit in Navy Blue<br>₹2,620<br></a>
+                <button type="button" class="btn btn-warning"><img src="https://img.icons8.com/material/344/shopping-cart-loaded--v1.png" width="20vw" height="20vw">&nbsp;ADD TO CART</button>
+            </div>
+            <div class="card-body text-center" >
+               <a href=''> <img src="https://medias.utsavfashion.com/media/catalog/product/cache/1/image/500x/040ec09b1e35df139433887a97daa66f/e/m/embroidered-art-silk-pakistani-suit-in-light-blue-v1-kch5437_4.jpg"  width="280vw" height="330vw"><br>
+                Embroidered Art Silk <br> Suit in Light Blu<br>₹4,599<br></a>
+                <button type="button" class="btn btn-warning"><img src="https://img.icons8.com/material/344/shopping-cart-loaded--v1.png" width="20vw" height="20vw">&nbsp;ADD TO CART</button>
+            </div>
+            <div class="card-body text-center" >
+               <a href=''> <img src="https://medias.utsavfashion.com/media/catalog/product/cache/1/small_image/295x/040ec09b1e35df139433887a97daa66f/b/a/bandhej-georgette-saree-in-multicolor-v1-ssf16875.jpg"  width="280vw" height="330vw"><br>
+                Bandhej Georgette Saree <br>in Multicolor<br>₹3,199<br></a>
+                <button type="button" class="btn btn-warning"><img src="https://img.icons8.com/material/344/shopping-cart-loaded--v1.png" width="20vw" height="20vw">&nbsp;ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="card card-group" id="foot">
+            
+                <div class="card-body">
+                        <h5> ABOUT US</h5>
+                        <a href=''>Contact Us</a><br>
+                        <a href=''>About Us</a><br>
+                        <a href=''>Careers</a><br>
+                        <a href=''>Wholesale</a><br>
+                        <a href=''>Corporate Information</a><br>
+                   
+                    </div>
+                <div class="card-body">
+                    <h5>HELP</h5>
+                    <a href=''>Payments</a><br>
+                    <a href=''>Shipping</a><br>
+                    <a href=''>Cancellation & Returns</a><br>
+                    <a href=''>FAQ</a><br>
+                    <a href=''>Report Infringement</a><br>
+
+                </div>
+                
+                <div class="card-body">
+                    <h5>POLICY</h5>
+                    <a href=''>Return Policy</a><br>
+                    <a href=''>Terms of use</a><br>
+                    <a href=''>Security</a><br>
+                    <a href=''>Privacy</a><br>
+                </div>
+                
+                <div class="card-body">
+                    <h5>SOCIAL</h5>
+                    <a href=''>Meta</a><br>
+                    <a href=''>Twitter</a><br>
+                    <a href=''>YouTube</a><br>
+                </div>
+
+                <div class="card-body">
+                    <b>Mail Us:</b><br>
+                    designerproducts@gmail.com
+                    <br><br>
+                    <b>Address:</b> <br>No.108, 3rd Floor, Rosalpatti<br>
+                    Virudhunagar, Tamil Nadu<br>
+                    626001
+
+                </div>
+
+        
+        </div>
+
+
+
+    </div>
+
+    </body>
+</html>

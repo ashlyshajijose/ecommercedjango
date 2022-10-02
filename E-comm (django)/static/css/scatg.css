@@ -1,0 +1,13 @@
+h2{
+    margin-top: 2%;
+    color: aliceblue;
+}
+table{
+    margin-top: 2%;
+    width: 500px;
+    text-align: center;
+}
+th,td{
+    border: 1px solid;
+    padding: 8px;
+}

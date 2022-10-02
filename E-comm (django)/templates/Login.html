@@ -1,0 +1,66 @@
+{% extends 'home.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    {% load static %}
+    <style>
+.new{
+    border: 2px solid;
+    width: 600px;
+    padding: 10px 50px 50px;
+    margin: 5% 30% 0% 30%;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 10px;
+    height: 400px;
+}
+.input{
+    padding: 10px;
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    border-style: hidden;
+    border-bottom-style:solid;
+    font-family: cursive;
+}
+h3{
+    font-family: cursive;
+
+}
+button{
+    width: 150px;
+    padding: 5px;
+    border-radius: 8px;
+    font-family: cursive;
+
+}
+.align{
+    margin-left: -5%;
+}
+.align1{
+    margin-left: 5%;
+    font-family: cursive;
+
+}
+</style>
+</head>
+<body>
+<div class="container-fluid new">
+<form method="post" action="{% url 'Login' %}">
+    {% csrf_token %}
+    <h3>Log In</h3>
+    <input type="text" placeholder="Username" class="input" name="logname" id="usname"><br><br><br>
+    
+    <input type="password" placeholder="Password" class="input" name="passw" id="passw"><br><br><br>
+    <input type="checkbox" class="align">
+    <label class="align1">Remember me</label><br><br><br>
+    <button type="submit">Submit</button>
+</form>
+</div>
+</body>
+</html>
+{% endblock %}

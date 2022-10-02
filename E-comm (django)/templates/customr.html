@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/customer.css' %}">
+    <title>Customer</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="nav nav-pills justify-content-center">
+    <a href="{% url 'home' %}" class="left">Home</a>
+    <a href="{% url 'uprofile' %}">Edit Profile</a>
+    <a href="{% url 'cart' %}"> <img src="{% static 'img/cart.png' %}" alt="Cart" height="25vw" width="25vw"></a>
+    <a href="{% url 'Logout' %}">Logout</a>
+    </div><br><br>
+{% block content %}
+<center><h3>Welcome {{crt.first_name}}</h3></center><br><br>
+<div class="card-deck" style="width:fit-content">
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-top" style="width:fit-content" src="https://imgs.search.brave.com/uWySc1aj3JGNM8ymHEb8zjZMKRVBVQDG303z39YseLs/rs:fit:632:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5J/eDZYak1idUN2b3Ez/RVFOZ0pveUVRSGFG/aiZwaWQ9QXBp" alt=""><br>
+            <p class="card-text">adfhadf;dufhdfa</p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-to" style="width:fit-content" src="https://imgs.search.brave.com/uWySc1aj3JGNM8ymHEb8zjZMKRVBVQDG303z39YseLs/rs:fit:632:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5J/eDZYak1idUN2b3Ez/RVFOZ0pveUVRSGFG/aiZwaWQ9QXBp" alt=""><br>
+            <p class="card-text">adfhadf;dufhdfa</p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-top" style="width:fit-content" src="https://imgs.search.brave.com/uWySc1aj3JGNM8ymHEb8zjZMKRVBVQDG303z39YseLs/rs:fit:632:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5J/eDZYak1idUN2b3Ez/RVFOZ0pveUVRSGFG/aiZwaWQ9QXBp" alt=""><br>
+            <p class="card-text">adfhadf;dufhdfa</p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+            <img class="card-img-top" style="width:fit-content" src="https://imgs.search.brave.com/uWySc1aj3JGNM8ymHEb8zjZMKRVBVQDG303z39YseLs/rs:fit:632:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5J/eDZYak1idUN2b3Ez/RVFOZ0pveUVRSGFG/aiZwaWQ9QXBp" alt=""><br>
+            <p class="card-text">adfhadf;dufhdfa</p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+</div>
+<br>
+{% endblock %}
+</div>
+</body>
+</html>

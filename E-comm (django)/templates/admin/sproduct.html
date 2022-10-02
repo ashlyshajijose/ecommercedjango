@@ -1,0 +1,48 @@
+{% extends "admin.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sproduct.css' %}">
+    <title>Show Products</title>
+</head>
+<body>
+<div class="container-fluid">
+    <center>
+
+        <h3>All Products</h3>
+    <table style="background-color: antiquewhite;">
+            <tr>
+                <th>id</th>
+                <th>Product name</th>
+                <th>Product description</th>
+                <th>Product price</th>
+                <th>Product availability</th>
+                <th>Category</th>
+                <th>Product Image</th>
+                <th class="lg">Action</th>
+            </tr>
+            {% for prod in prod %}
+
+            <tr>
+                <td>{{prod.id}}</td>
+                <td>{{prod.Product_name}}</td>
+                <td>{{prod.Product_detail}}</td>
+                <td>{{prod.Product_price}}</td>
+                <td>{{prod.Product_stock}}</td>
+                <td>{{prod.catgr.product_category}}</td>
+                <td>{{prod.Product_img}}</td>
+                <td><a href="{% url 'edit_product' prod.id %}">Edit</a><br>
+                <a href="{% url 'delete_product' prod.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</div>
+</body>
+</html>
+{% endblock %}

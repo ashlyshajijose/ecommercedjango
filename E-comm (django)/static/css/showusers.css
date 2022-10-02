@@ -1,0 +1,22 @@
+h2{
+    margin-top: 1%;
+    text-align: center;
+    font-family: sans-serif;
+    color:rgb(71, 222, 71);
+}
+table{
+    margin-top: 2%;
+    border-collapse: collapse;
+    text-align: center;
+    width: 1500px;
+}
+th,td{
+    border: 1px solid rgb(240, 71, 71);
+    padding: 8px 15px;
+}
+.lg{
+    width: 80px;
+}
+a{
+    text-decoration: none;
+}

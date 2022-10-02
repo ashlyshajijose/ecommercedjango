@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipsa - Shopping Solutions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <style>
+        body{
+            background-image: url('https://img.freepik.com/premium-vector/hand-painted-background-violet-orange-colours_23-2148427578.jpg?w=2000');
+            background-repeat:repeat-y;
+            background-size:100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid" >
+<div class="head">
+    <ul class="nav nav-pills justify-content-center">
+    <li class="nav-item"><a href="{% url 'home' %}" class="left">Home</a></li>
+    <li class="nav-item"><input type="text" class="center" placeholder="Search for products,Brands or more ..."></li>
+    <li class="nav-item"><a href="{% url 'cart' %}"> <img src="{% static 'img/cart.png' %}" alt="Cart" height="25vw" width="25vw"></a></li>
+    <li class="nav-item"><a href="{% url 'loginpage' %}" class="cent">Sign in</a></li>
+    <li class="nav-item"><a href="{% url 'signuppage' %}" class="cent">Sign up</a></li>
+    <li class="nav-item"><a href="{% url 'Logout' %}">Logout</a></li>
+    </ul>
+</div>
+
+<div>
+    <ul class="nav nav-pills justify-content-center cat" >
+        <li class="nav-item"><a href="">Electronics</a></li>
+        <li class="nav-item"><a href=""> Fashion</a></li>
+        <li class="nav-item"><a href=""> Home & Garden </a></li>
+        <li class="nav-item"><a href=""> Health & Beauty</a></li>
+        <li class="nav-item"><a href=""> Sports</a></li>
+        <li class="nav-item"><a href=""> Toys</a></li>
+        <li class="nav-item"><a href=""> Motor Accessories</a></li>
+    </ul>
+</div>
+<br><br>
+{% block content %}
+<center>    
+    <div class="card-deck" style="width:fit-content;">
+        {% for cd in prd %}
+        <div class="card" style="width: 330px; padding:30px; text-align: center;">
+            <img src="{{cd.Product_img.url}}" alt="product img" height="200px" width="200px" ><br>
+            <div class="card-block">
+                <div class="card-text"><label style="font-size:larger; text-decoration: underline;"><b>{{cd.Product_name}}</b></label></div><br>
+                <div class="card-text"><label><caption>Rs.&Tab;</caption>{{cd.Product_price}}<caption>/-</caption></label></div>
+                <div class="card-text"><label>{{cd.Product_detail}}</label></div><br>
+                <a href="{% url 'add_cart' cd.id %}" class="butn" >Buy now</a><br><br>
+                <a href="" class="butn">More Details</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </center><br>
+<h3>New Arrivals</h3>
+<div class="card-deck" >
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-top" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text">adfhadf;dufhdfa</p>
+            <form action="">
+            <button class="buy">Buy Now</button>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-to" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-top" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+            <img class="card-img-top" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<div class="card-deck" style="width:fit-content">
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-top" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-to" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-top" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+            <img class="card-img-top" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+</div>
+<br>
+<h3>Best Deals</h3>
+<div class="card-deck" style="width:fit-content">
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-top" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+            <button class="buy">Buy Now</button>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-to" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+        <img class="card-img-top" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" style="width:fit-content">
+            <img class="card-img-top" style="width:fit-content" src="https://www.beyoung.in/api/cache/catalog/products/banner_desktop/mens-clothing-banner-mobile-view-._25_8_2022_767x430.jpg" alt=""><br>
+            <p class="card-text"></p>
+            <form action="">
+                <button class="buy">Buy Now</button>
+                </form>
+        </div>
+    </div>
+</div>
+<br>
+<div class="footer" style="margin-left: -1%; margin-right:-1%;">
+    <div class="card card-group" id="foot">
+            
+        <div class="card-body">
+                <h5> ABOUT US</h5>
+                <a href=''>Contact Us</a><br>
+                <a href=''>About Us</a><br>
+                <a href=''>Careers</a><br>
+                <a href=''>Wholesale</a><br>
+                <a href=''>Corporate Information</a><br>
+           
+            </div>
+        <div class="card-body">
+            <h5>HELP</h5>
+            <a href=''>Payments</a><br>
+            <a href=''>Shipping</a><br>
+            <a href=''>Cancellation & Returns</a><br>
+            <a href=''>FAQ</a><br>
+            <a href=''>Report Infringement</a><br>
+
+        </div>
+        
+        <div class="card-body">
+            <h5>POLICY</h5>
+            <a href=''>Return Policy</a><br>
+            <a href=''>Terms of use</a><br>
+            <a href=''>Security</a><br>
+            <a href=''>Privacy</a><br>
+        </div>
+        
+        <div class="card-body">
+            <h5>SOCIAL</h5>
+            <a href=''>Meta</a><br>
+            <a href=''>Twitter</a><br>
+            <a href=''>YouTube</a><br>
+        </div>
+
+        <div class="card-body">
+            <b>Mail Us:</b><br>
+            flipsainfo@gmail.com
+            <br><br>
+            <b>Local Address:</b> <br>No.108, 3rd Floor, Rosalpatti<br>
+            Virudhunagar, Tamil Nadu<br>
+            626001
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+</div>
+</body>
+</html>

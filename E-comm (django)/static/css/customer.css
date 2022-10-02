@@ -1,0 +1,16 @@
+body{
+    background-image: url("https://imgs.search.brave.com/EqkxBD_zuHpN1KylaNV3gMOz14MDn_sXd1699OJfVxc/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9pbXBy/ZXNzcHJpbnRlcnMu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE3LzEwL2JsdXJy/ZWQtYmFja2dyb3Vu/ZC0xLmpwZw");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a{
+    color: rgb(71, 126, 199);
+    margin-right: 5%;
+    margin-top: 1%;
+}
+.nav{
+    background-color: rgb(218, 231, 136);
+    margin-left: -1%;
+    margin-right: -1%;
+    padding-bottom: 1%;
+}

@@ -1,0 +1,51 @@
+{% extends 'customr.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add profile</title>
+    <style>
+        button{
+            background-color: greenyellow;
+            border: 1px solid;
+            padding: 5px 8px;
+        }
+        form{
+            padding-bottom: 5%;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h3>Profile</h3><br>
+    <form method="post" action="/eprofile/" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if data1.photo %}
+        <img src="{{data1.photo.url}}" height="100px" width="100px">
+        {% else %}
+        <img src="{% static 'img/user.png' %}" height="70px" width="70px">
+        {% endif %}<br><br>
+        <label>First Name:</label>
+        <input type="text" name="pfname" value="{{data1.First_name}}" style="margin-left: 30px;"><br><br>
+        <label>Last Name:</label>
+        <input type="text" name="plname" value="{{data1.Last_name}}" style="margin-left: 30px;"><br><br>
+        <label>Phone Number:</label>
+        <input type="tel" name="phnmbr" value="{{data1.Phone_numbr}}"><br><br>
+        <label>Address:</label>
+        <input type="text" name="adds" value="{{data1.Address}}" style="margin-left: 50px;"><br><br><br>
+        <label>Landmark:</label>
+        <input type="text" name="lmark" value="{{data1.Landmark}}" style="margin-left: 40px;"><br><br>
+        <label>Pincode:</label>
+        <input type="number" name="code" value="{{data1.Pincode}}" style="margin-left: 55px;"><br><br>
+        <label>Photo:</label>
+        <input type="file" name="pht" accept="user_img/*" value="" style="margin-left: 50px;width: 210px;"><br><br>
+        <button type="submit">Upload</button>
+    </form>
+</center>
+</body>
+</html>
+{% endblock %}

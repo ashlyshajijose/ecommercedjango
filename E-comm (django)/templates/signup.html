@@ -1,0 +1,73 @@
+{% extends 'Home.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+.new{
+    border: 2px solid;
+    width: 600px;
+    padding: 10px 50px 50px;
+    margin: 5% 30% 5% 30%;
+    background-color: rgb(249, 159, 159);
+    text-align: center;
+    border-radius: 10px;
+    height: 6s00px;
+    font-family: cursive;
+
+}
+#input{
+    padding: 10px;
+    width: 300px;
+    background-color: rgb(235, 155, 155);
+    border-style: hidden;
+    border-bottom-style:solid;
+    font-family: cursive;
+
+}
+button{
+    width: 150px;
+    padding: 5px;
+    border-radius: 8px;
+    font-family: cursive;
+}
+select{
+    width: 100px;
+    padding: 5px;
+    border-radius: 8px;
+    font-family: cursive;
+}
+input:hover{
+    border: 2px solid;
+}
+    </style>
+</head>
+<body>
+<div class="container-fluid new">
+    <form method="post" action="{% url 'Signup' %}">
+        {% csrf_token %}
+        <h3>Sign Up</h3>
+        <input type="text" placeholder="First name" name="fname" id="input" ><br><br>
+        
+        <input type="text" placeholder="Last name" name="lname" id="input"><br><br>
+        
+        <input type="text" placeholder="Username" name="uname" id="input"><br><br>
+        
+        <input type="tel" placeholder="Phone number" name="tphone" id="input"><br><br>
+        
+        <input type="email" placeholder="E mail" name="E-mail" id="input"><br><br>
+        
+        <input type="password" placeholder="Password" name="pswd" id="input"><br><br>
+        
+        <input type="password"placeholder="Confirm Password" name="cpswd" id="input"><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
+{% endblock %}
